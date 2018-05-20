@@ -10,6 +10,7 @@ require(['add_module','sortArray'],function(add,sortArray){
     console.log(add(a,b));
     console.log(sortArray(arr1));
     console.log(sortArray(b));
+    console.log(sortArray(b));
 
 });
 
