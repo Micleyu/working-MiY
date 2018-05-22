@@ -31,6 +31,10 @@
                 background: green;
                 margin: 10px;
             }
+            .num-box img{
+                width: 100px;
+                height: 100px;
+            }
             #container button{
                 width: 100px;
                 height: 50px;
@@ -48,33 +52,40 @@
         <div id="container">
             <ul class="num-box">
                 <li>
-                    <img src="" alt="">
+                    <img src="images/img_one.jpg" alt="">
                 </li>
                 <li>
-                    <img src="" alt="">
+                    <img src="images/img_two.jpg" alt="">
                 </li>
                 <li>
-                    <img src="" alt="">
+                    <img src="images/img_three.jpg" alt="">
                 </li>
             </ul>
             <button>click</button>
             <div class="content">
-
+               <span></span>
             </div>
         </div>
 
     <script>
         var OBtn=document.getElementsByTagName('button')[0];
         var aLi=container.getElementsByTagName('li');
+        var oNumBox=document.querySelectorAll('.num-box')[0];
+        var aImg=oNumBox.getElementsByTagName('img');
+        var aCount=[
+            'one','two','three'
+        ];
 
         OBtn.onclick=function () {
             var num0=Math.floor(Math.random()*3)+1;
             var num1=Math.floor(Math.random()*3)+1;
             var num2=Math.floor(Math.random()*3)+1;
             console.log(num0,num1,num2);
-
+            aImg[0].src='images/img_'+aCount[num0-1]+'.jpg';
+            aImg[1].src='images/img_'+aCount[num1-1]+'.jpg';
+            aImg[2].src='images/img_'+aCount[num2-1]+'.jpg';
             if(num0==num1&&num1==num2){
-                alert('you win')
+
             }
         }
     </script>
