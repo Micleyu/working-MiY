@@ -3,32 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>弹出层模块</title>
-        <style>
-            .dialog-mask{
-                position: absolute;
-                left:0;
-                top:0;
-                right:0;
-                bottom:0;
-                background: rgba(0,0,0,.5);
-            }
-            .dialog-box{
-                width: 400px;
-                height: 300px;
-                background: white;
-                position: absolute;
-                left: 50%;
-                top:50%;
-                -webkit-transform: translate(-50%,-50%);
-            }
-        </style>
+        <link rel="stylesheet" href="css/弹出.css">
+        <script src="js/require.js" data-main="js/index"></script>
     </head>
     <body>
-        <div class="dialog-mask">
-            <div class="dialog-box">
-                <div class="dialog-title"></div>
-                <div class="dialog-content"></div>
-            </div>
-        </div>
+        <button>click</button>
     </body>
 </html>

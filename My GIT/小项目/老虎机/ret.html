@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #container{
+                width: 360px;
+                height: 400px;
+                margin: 100px auto;
+                background:  whitesmoke;
+                border: 1px solid #000000;
+            }
+            .num-box{
+                width: 360px;
+                height: 120px;
+                background: whitesmoke;
+                margin: 10px 0;
+            }
+            .num-box li{
+                width: 100px;
+                height: 100px;
+                float: left;
+                background: green;
+                margin: 10px;
+            }
+            #container button{
+                width: 100px;
+                height: 50px;
+                margin: 0 130px 20px;
+            }
+            #container .content{
+                width: 340px;
+                height: 180px;
+                margin: 0 auto;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <ul class="num-box">
+                <li>
+                    <img src="" alt="">
+                </li>
+                <li>
+                    <img src="" alt="">
+                </li>
+                <li>
+                    <img src="" alt="">
+                </li>
+            </ul>
+            <button>click</button>
+            <div class="content">
+
+            </div>
+        </div>
+
+    <script>
+        var OBtn=document.getElementsByTagName('button')[0];
+        var aLi=container.getElementsByTagName('li');
+
+        OBtn.onclick=function () {
+            var num0=Math.floor(Math.random()*3)+1;
+            var num1=Math.floor(Math.random()*3)+1;
+            var num2=Math.floor(Math.random()*3)+1;
+            console.log(num0,num1,num2);
+
+            if(num0==num1&&num1==num2){
+                alert('you win')
+            }
+        }
+    </script>
+
+    </body>
+</html>
