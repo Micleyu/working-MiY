@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 680px;
+    height: 344px;
+    margin:0 auto;
+    position: relative;
+}
+.chang-box{
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 680px;
+    height: 344px;
+}
+.changing-btn1{
+    position: absolute;
+    right:10px;
+    bottom:20px;
+}
+.changing-btn1 li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #000000;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 10px;
+}
+.changing-btn1 li.selected{
+    background: orange;
+}
+.changing-btn2{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.changing-btn2 span{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #000000;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 10px;
+}

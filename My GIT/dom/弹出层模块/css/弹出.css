@@ -19,3 +19,11 @@
     top:50%;
     -webkit-transform: translate(-50%,-50%);
 }
+.dialog-close{
+    position: absolute;
+    right:5px;
+    top: 5px;
+    border: 1px solid black;
+    /*border-radius:15px ;*/
+;
+}
