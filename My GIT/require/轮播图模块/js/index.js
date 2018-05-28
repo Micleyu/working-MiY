@@ -7,13 +7,12 @@ requirejs.config({
     }
 });
 require(['jquery','changing'],function ($,Changing) {
-    var changing1=new Changing({
+    var changing1=new Changing();
+    changing1.start({
+        select:'.box',
         alink:['#','#','#','#'],
         img:['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'],
         num:['1','2','3','4']
-    });
-    $('.box').append(changing1.container);
-
-
+    })
 
 });
