@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font:12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.wrapper{
+    margin: 0 auto;
+    width: 1230px;
+}
+/*first开始*/
+.first{
+    height: 32px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f2f2f2;
+}
+/*first left开始*/
+.first-left{
+    float: left;
+}
+.first-left>li{
+    float: left;
+    line-height: 32px;
+    font-family: "Microsoft YaHei", SimSun, '\5b8b\4f53', sans-serif;
+    color: #999999;
+}
+.first-left>li>a:hover{
+    color: #FF0036;
+}
+.first-left>li>a{
+    color: #999999;
+}
+.firstl-login{
+    padding:0 10px 0 20px;
+}
+.firstl-register{
+    padding: 0 10px 0 10px;
+}
+/*first left结束*/
+/*first right开始*/
+.first-right{
+    float: right;
+    font-family: "Microsoft YaHei", SimSun, '\5b8b\4f53', sans-serif;
+}
+.firstr-list{
+    float: left;
+
+}
+
+.firstr-list1,.firstr-list3,.firstr-list6,.firstr-list7{
+    padding: 0 14px 0 10px;
+    border-width:0 1px;
+    border-style:solid ;
+    border-color: #f2f2f2;
+    position: relative;
+}
+.firstr-list2,.firstr-list4,.firstr-list5{
+    padding: 0 10px 0 10px;
+}
+.firstr-list>a{
+    color: #999999;
+    display:block;
+    height: 32px;
+    line-height: 32px;
+}
+.firstr-list-icon{
+    float: left;
+}
+.firstr-list-link1{
+    position: relative;
+}
+.firstr-list:hover>a{
+    color: #FF0036;
+}
+.firstr-list1:hover,.firstr-list3:hover,.firstr-list6:hover,.firstr-list7:hover{
+    background: #fff;
+}
+.firstr-list1:hover span{
+    text-decoration: underline;
+}
+.firstr-list3:hover span{
+    text-decoration: underline;
+}
+.firstr-list6:hover span{
+    text-decoration: underline;
+}
+.firstr-list:hover b{
+    transform: rotate(180deg);
+}
+.firstr-list-link1>b{
+    width: 0;
+    height: 0;
+    display: block;
+    border-style:solid;
+    border-width: 3px;
+    border-color:#999999 transparent transparent transparent;
+    float: left;
+    margin-top: 16px;
+    position: absolute;
+    right:-8px;
+    transition:all 0.1s linear ;
+    transform-origin: 3px 1.5px;
+}
+.firstr-icon{
+    color: #FF0036;
+   position: relative;
+    top: 2px;
+}
+.firstr-list-menu{
+    position: absolute;
+    top: 32px;
+    left: -1px;
+    width: 74px;
+    border:1px solid #f2f2f2;
+    border-top: none;
+    padding: 10px 8px;
+    display: none;
+    background: #ffffff;
+}
+.firstr-list1:hover .firstr-list-menu{
+    display: block;
+}
+.firstr-list-menu a{
+    color: #999999;
+}
+.firstr-menu-link:hover{
+    color: #FF0036;
+    text-decoration: underline;
+}
+/*first right结束*/
+/*first结束*/
