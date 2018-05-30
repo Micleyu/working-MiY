@@ -8,11 +8,23 @@
                 margin: 0;
                 padding: 0;
             }
+            body{
+                background: url("image/背景.jpg") no-repeat;
+            }
             ul{
                 list-style: none;
             }
             .container{
                 margin: 200px 50%;
+                -webkit-transform: translate(-250px);
+            }
+            .result{
+                width: 500px;
+                height: 200px;
+                font-size: 30px;
+                position: absolute;
+                left: 50%;
+                top: 400px;
                 -webkit-transform: translate(-250px);
             }
             .clic-box{
@@ -40,10 +52,20 @@
                 height: 50px;
                 margin: 10px 225px;
             }
+
             .txt{
                 width: 50px;
                 height: 50px;
                 font-size: 30px;
+                border: 3px solid #000000;
+                text-align: center;
+            }
+            .result p{
+                width: 500px;
+                height: 100px;
+                color: #00b262;
+                line-height: 100px;
+                text-align: center;
             }
         </style>
     </head>
@@ -60,16 +82,24 @@
                 </form>
             </div>
         </div>
+        <div class="result">
+            你的分数是:<span>0</span>分
+            <p></p>
+        </div>
         <script>
             var aStr=[
                 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
             ];
             var idx;
+            var score;
             var num1=0;
             var num2=0;
             var oClicBox=document.querySelector('.clic-box');
             var oLi=oClicBox.getElementsByTagName('li')[0];
             var oTxt=document.querySelector('.txt');
+            var oResult=document.querySelector('.result');
+            var oSpan=oResult.getElementsByTagName('span')[0];
+            var oPWord=oResult.getElementsByTagName('p')[0];
             console.log(oClicBox);
 
             setInterval(function () {
@@ -80,22 +110,25 @@
                     oLi.innerHTML=aStr[idx]
                 }
             },10);
-            oTxt.onkeyup=function (e) {
-                e= e || window.event;
+            oTxt.onkeyup=function () {
                 if (oTxt.value==oLi.innerHTML){
                     oLi.style.left=-80+'px';
                     idx=Math.floor(Math.random()*26);
                     oLi.innerHTML=aStr[idx];
                     oTxt.value='';
                     num1++;
-                    console.log(num1)
+                    console.log(num1);
+                    oPWord.innerHTML='Great!'
                 }
                 else{
                     oTxt.value='';
                     num2++;
-                    console.log(num2)
+                    console.log(num2);
+                    oPWord.innerHTML='Bad!'
                 }
-
+                score=num1*10-num2*10;
+                console.log(score);
+                oSpan.innerHTML=score;
             }
 
         </script>
