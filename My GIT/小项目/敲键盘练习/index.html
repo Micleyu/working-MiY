@@ -65,8 +65,11 @@
                 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
             ];
             var idx;
+            var num1=0;
+            var num2=0;
             var oClicBox=document.querySelector('.clic-box');
             var oLi=oClicBox.getElementsByTagName('li')[0];
+            var oTxt=document.querySelector('.txt');
             console.log(oClicBox);
 
             setInterval(function () {
@@ -77,7 +80,23 @@
                     oLi.innerHTML=aStr[idx]
                 }
             },10);
+            oTxt.onkeyup=function (e) {
+                e= e || window.event;
+                if (oTxt.value==oLi.innerHTML){
+                    oLi.style.left=-80+'px';
+                    idx=Math.floor(Math.random()*26);
+                    oLi.innerHTML=aStr[idx];
+                    oTxt.value='';
+                    num1++;
+                    console.log(num1)
+                }
+                else if (oTxt.value!=oLi.innerHTML){
+                    oTxt.value='';
+                    num2++;
+                    console.log(num2)
+                }
 
+            }
 
         </script>
     </body>
