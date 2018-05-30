@@ -19,7 +19,7 @@
                 width: 500px;
                 height: 100px;
                 background: #cccccc;
-                overflow: hidden;
+                /*overflow: hidden;*/
                 position: relative;
             }
             .clic-box li{
@@ -30,6 +30,10 @@
                 position: absolute;
                 top: 0;
                 left: -80px;
+                color: #00b262;
+                font-size: 50px;
+                line-height: 80px;
+                text-align: center;
             }
             .content{
                 width: 50px;
@@ -47,7 +51,7 @@
         <div class="container">
             <div class="title">
                 <ul class="clic-box">
-                    <li></li>
+                    <li>a</li>
                 </ul>
             </div>
             <div class="content">
@@ -57,6 +61,23 @@
             </div>
         </div>
         <script>
+            var aStr=[
+                'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
+            ];
+            var idx;
+            var oClicBox=document.querySelector('.clic-box');
+            var oLi=oClicBox.getElementsByTagName('li')[0];
+            console.log(oClicBox);
+
+            setInterval(function () {
+                oLi.style.left=oLi.offsetLeft+1+'px';
+                if(oLi.offsetLeft>=500){
+                    oLi.style.left=-80+'px';
+                    idx=Math.floor(Math.random()*26);
+                    oLi.innerHTML=aStr[idx]
+                }
+            },10);
+
 
         </script>
     </body>
