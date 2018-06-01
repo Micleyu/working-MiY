@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 254px;
+    margin:200px auto;
+}
+td{
+    width: 40px;
+    height: 40px;
+    background: #e5e5e5;
+    border: 2px solid #cccccc;
+}
+.no-mine{
+
+}
+.mine{
+    background: red;
+}
+.result{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px auto;
+}
+.result span{
+    font-size: 30px;
+    display: none;
+}
+.result .result-win{
+    color: #00b262;
+}
+.result .result-lost{
+    color: #ff0000;
+}
