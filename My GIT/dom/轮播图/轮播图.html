@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #container{
+                width: 1130px;
+                height: 500px;
+                margin: 50px auto;
+                overflow: hidden;
+                position: relative;
+            }
+            #img-box{
+                width: 3390px;
+                overflow: hidden;
+                position: absolute;
+                transition: left 0.5s linear;
+            }
+            #img-box div{
+                float: left;
+                display: none;
+            }
+            #img-box .img-active{
+                display: block;
+            }
+            #img-box img{
+                width: 1130px;
+                height: 500px;
+                display: block;
+            }
+            #ntb-box{
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+            }
+            #ntb-box .ntb-active{
+                background: #FFFFFF;
+            }
+            #ntb-box li,#arrow-box span{
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                background: rgba(0,0,0,.3);
+                float: left;
+                text-align: center;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            #arrow-box{
+                position: absolute;
+                left: 20px;
+                bottom: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="img-box">
+                <div class="img-active">
+                    <a href="#">
+                        <img src="1.jpg" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="2.webp" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <ul id="ntb-box">
+                <li class="ntb-active">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <div id="arrow-box">
+                <span id="arrow-bef">&lt;</span>
+                <span id="arrow-next">&gt;</span>
+            </div>
+        </div>
+
+        <script>
+            var oContainer=document.getElementById('container');
+            var oNtb= document.getElementById('ntb-box');
+            var aLi=oNtb.getElementsByTagName('li');
+            var oImg=document.getElementById('img-box');
+            var aDiv=oImg.getElementsByTagName('div');
+            var oNext=document.getElementById('arrow-next');
+            var oBef=document.getElementById('arrow-bef');
+            var count=0;
+            var timer;
+            for(var i=0;i<aLi.length;i++){
+               aLi[i].num=i;
+               aLi[i].onclick=function () {
+//                   for(var j=0;j<aLi.length;j++){
+//                       aLi[j].className=''
+//                   }
+//                   aLi[this.num].className='ntb-active';
+//                   oImg.style.left=-this.num*1130+'px';
+                   change(this.num);
+                   count=this.num;
+               }
+           }
+           oNext.onclick=function () {
+               count++;
+               if(count==aLi.length){
+                   count=0;
+               }
+//               for(var i=0;i<aLi.length;i++){
+//               aLi[i].className=''
+//           }
+//           aLi[count].className='ntb-active';
+//           oImg.style.left=-count*1130+'px'
+               change(count);
+           };
+           oBef.onclick=function () {
+               count--;
+               if(count==-1){
+                   count=aLi.length-1;
+               }
+              change(count);
+           };
+           function change(idx) {
+               for(var i=0;i<aLi.length;i++){
+                   aLi[i].className='';
+                   aDiv[i].className=''
+               }
+               aLi[idx].className='ntb-active';
+//               oImg.style.left=-idx*1130+'px'
+               aDiv[idx].className='img-active'
+           }
+            timer=setInterval(function () {
+                oNext.onclick();
+            },2000);
+            oContainer.onmouseover=function () {
+                clearInterval(timer)
+            };
+            oContainer.onmouseout=function () {
+                timer=setInterval(function () {
+                    oNext.onclick();
+                },2000);
+            };
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

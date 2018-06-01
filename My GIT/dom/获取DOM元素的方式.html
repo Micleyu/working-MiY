@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            height: 100px;
+            width: 100px;
+            background: red;
+            text-align: center;
+            font-size:15px;
+            line-height: 100px;
+        }
+    </style>
+
+    <!--<script>-->
+    <!--window.onload=function () {-->
+        <!--var odiv1=document.getElementById('div1');-->
+        <!--console.log(odiv1);-->
+        <!--odiv1.onclick=function () {-->
+            <!--alert('haha');-->
+        <!--}-->
+    <!--}-->
+    <!--</script>-->
+
+</head>
+<body>
+<div class="bb">
+    <div class="aa cc dd">
+        <span>jgajg</span>
+    </div>
+</div>
+<br>
+<div>
+    <span>jgajg</span>
+</div>
+<br>
+<div class="bb">
+
+
+<div class="aa cc">
+    <span>jgajg</span>
+</div>
+</div>
+<script>
+//    var odiv1=document.getElementById('div1');
+//    console.log(odiv1);
+//    odiv1.onclick=function () {
+//        alert('haha');
+//    }
+//    var aDIV=document.getElementsByTagName('div');
+//    console.log(aDIV);
+//    for(var i=0;i<aDIV.length;i++){
+//        aDIV[i].onclick=function () {
+//            console.log('haha');
+//        }
+//    }
+
+    function getEleclass(clsName,context) {
+        var result=[];
+//        if(!context){
+//            context=document;
+//        }
+        context=context||document;
+        var allELE=context.getElementsByTagName('*');
+        for(var i=0;i<allELE.length;i++){
+//            if(allELE[i].className==clsName){
+//                result.push(allELE[i])
+//            }
+            var str=allELE[i].className;
+            var arr=str.split(' ');
+            for(var j=0;j<arr.length;j++){
+                if (arr[j]==clsName){
+                    result.push(allELE[i]);
+                }
+            }
+        }
+
+
+        return result;
+    }
+    var bB=getEleclass('bb');
+    for (var z=0;z<bB.length;z++){
+        var aA=getEleclass('aa',bB[z]);
+//    aA[0].style.background='yellow';
+        for(i=0;i<aA.length;i++){
+            aA[i].style.background='green';
+        }
+    }
+
+
+</script>
+
+
+
+</body>
+</html>

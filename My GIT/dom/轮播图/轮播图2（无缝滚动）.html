@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #content{
+                margin: 50px auto;
+                width: 1130px;
+                height: 500px;
+                overflow: hidden;
+                position: relative;
+            }
+            #content #img-box{
+                width: 4520px;
+                height: 500px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            #img-box li{
+                float: left;
+            }
+            #img-box img{
+                width:1130px;
+                height: 500px;
+                display: block;
+            }
+            #btn-box{
+                position: absolute;
+                right: 40px;
+                bottom: 20px;
+            }
+            #btn-box li{
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                background: rgba(0,0,0,.5);
+                float: left;
+                margin-right:5px;
+                cursor: pointer;
+            }
+            #btn-box .btn-active{
+                background: white;
+            }
+            #btn-box li:hover{
+                background: white;
+            }
+            #arrow-box{
+                position: absolute;
+                left: 40px;
+                bottom: 20px;
+            }
+            #arrow-box span{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                background: rgba(0,0,0,.5);
+                cursor: pointer;
+            }
+            #arrow-box span:hover{
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <ul id="img-box">
+                <li>
+                    <a href="#">
+                        <img src="1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="2.webp" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="1.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul id="btn-box">
+                <li class="btn-active">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <div id="arrow-box">
+                <span id="arrow-bef">&lt;</span>
+                <span id="arrow-next">&gt;</span>
+            </div>
+        </div>
+        <script src="jslib.js"></script>
+        <script>
+            var oArrowNext=document.getElementById('arrow-next');
+            var oArrowBef=document.getElementById('arrow-bef');
+            var oImgBox=document.getElementById('img-box');
+            var aImg=oImgBox.getElementsByTagName('li');
+            var oBtnBox=document.getElementById('btn-box');
+            var aBtn=oBtnBox.getElementsByTagName('li');
+            var count=0;
+            function change(idx) {
+                for (var j=0;j<aBtn.length;j++){
+                    aBtn[j].className='';
+                }
+                aBtn[idx==aBtn.length?0:idx].className='btn-active';
+//                oImgBox.style.left=-idx*aImg[0].offsetWidth+'px';
+                animate(oImgBox,{
+                    left:-idx*aImg[0].offsetWidth
+                })
+            }
+                oArrowNext.onclick=function () {
+                    count++;
+                    if(count==aImg.length){
+                        count=1;
+                        oImgBox.style.left=0;
+                    }
+                    change(count);
+                };
+            oArrowBef.onclick=function () {
+                count--;
+                if(count==-1){
+                    count=aImg.length-2;
+                    oImgBox.style.left=-(count+1)*aImg[0].offsetWidth+'px';
+                }
+                change(count);
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #menu{
+                width: 100px;
+                border: 1px solid #8b8b8b;
+                border-radius:15px ;
+                display: none;
+                position: absolute;
+                overflow: hidden;
+            }
+            #menu li{
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+                font-size: 12px;
+            }
+            #menu li:hover{
+                background: cornflowerblue;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+    <ul id="menu">
+        <li>设为代办</li>
+        <li>设为已读</li>
+        <li>置顶邮件</li>
+        <li>添加备注</li>
+        <li>删除</li>
+    </ul>
+    <script>
+        document.oncontextmenu=function (e) {
+          var oMenu= document.getElementById('menu');
+            oMenu.style.display='block';
+            x=e.clientX;
+            y=e.clientY;
+            oMenu.style.left=x+'px';
+            oMenu.style.top=y+'px';
+
+
+
+            return false;
+        };
+        var oMenu= document.getElementById('menu');
+        var ali=oMenu.getElementsByTagName('li');
+        var aNum= new Array();
+        aNum[0]='设为代办';
+        aNum[1]='设为已读';
+        aNum[2]='置顶邮件';
+        aNum[3]='添加备注';
+        aNum[4]='删除';
+        for(i=0;i<ali.length;i++){
+                ali[i].num=aNum[i];
+            ali[i].onclick=function () {
+                oMenu.style.display='none';
+//               console.log(this.innerHTML);
+                var K=this.num;
+                console.log(K)
+            }
+        }
+        document.onclick=function (){
+            oMenu= document.getElementById('menu');
+            oMenu.style.display='none';
+        }
+
+
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div class="div2">1</div>
+
+        <script>
+//            对象
+            var oDiv1=document.querySelector('#div1');
+//            console.log(oDiv1);
+//            数组
+            var oDiv2=document.querySelectorAll('.div2');
+                function previous(elem) {
+                    do {
+                        elem=elem.previousSibling;
+                    }while(elem&&elem.nodeType!=1);
+                    return elem;
+                }
+//                下一个兄弟节点
+            function next(elem) {
+                do {
+                    elem=elem.nextSibling;
+                }while(elem&&elem.nodeType!=1);
+                    return elem;
+            }
+
+//            第一个儿子节点
+            function first(elem) {
+                elem=elem.firstChild;
+                if(elem&&elem.nodeType!=1){
+                    next(elem)
+                }
+                return elem;
+            }
+            console.log(first(oDiv1))
+        </script>
+    </body>
+</html>

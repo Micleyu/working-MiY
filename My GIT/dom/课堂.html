@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1{
+            margin-top: 100px;
+        }
+        .wrapper{
+            width: 150px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .wrapper1{
+            width: 150px;
+            height: 100px;
+            position: relative;
+        }
+        .ok{
+            list-style: none;
+            overflow: hidden;
+        }
+        .menu{
+            width: 50px;
+            height: 50px;
+            float: left;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+        }
+        .first{
+            background: pink;
+        }
+        .second{
+            background: green;
+        }
+        .third{
+            background: yellow;
+        }
+        .text{
+            width: 150px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            top:0;
+            left: 0;
+            display: none;
+            text-align: center;
+            line-height: 100px;
+        }
+        .first-a{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="wrapper">
+            <ul class="ok">
+                <li class="first menu">
+                    111
+                </li>
+                <li class="second menu">
+                    222
+                </li>
+                <li class="third menu">
+                    333
+                </li>
+            </ul>
+            <div class="wrapper1">
+                <div class="first-a text">
+                    aaa
+                </div>
+                <div class="second-b text">
+                    bbb
+                </div>
+                <div class="third-c text">
+                    ccc
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getEleclass(clsName,context) {
+            var result=[];
+            context=context||document;
+            var allELE=context.getElementsByTagName('*');
+            for(var i=0;i<allELE.length;i++){
+                var str=allELE[i].className;
+                var arr=str.split(' ');
+                for(var j=0;j<arr.length;j++){
+                    if (arr[j]==clsName){
+                        result.push(allELE[i]);
+                    }
+                }
+            }
+            return result;
+        }
+        var aFirst=getEleclass('first');
+        var bSecond=getEleclass('second');
+        var cThird=getEleclass('third');
+        var aFirstA=getEleclass('first-a');
+        var bSecondB=getEleclass('second-b');
+        var cThirdC=getEleclass('third-c');
+        aFirst[0].onclick=function () {
+            aFirst[0].style.background='pink';
+            bSecond[0].style.background='green';
+            cThird[0].style.background='yellow';
+            aFirstA[0].style.display='block';
+            bSecondB[0].style.display='none';
+            cThirdC[0].style.display='none';
+        };
+        bSecond[0].onclick=function () {
+            bSecond[0].style.background='pink';
+            aFirst[0].style.background='red';
+            cThird[0].style.background='yellow';
+            bSecondB[0].style.display='block';
+            aFirstA[0].style.display='none';
+            cThirdC[0].style.display='none';
+        };
+        cThird[0].onclick=function () {
+            cThird[0].style.background='pink';
+            aFirst[0].style.background='red';
+            bSecond[0].style.background='green';
+            cThirdC[0].style.display='block';
+            aFirstA[0].style.display='none';
+            bSecondB[0].style.display='none'
+        }
+
+
+    </script>
+
+</body>
+</html>

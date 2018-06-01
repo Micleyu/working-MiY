@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+
+</div>
+<script>
+    var oDiv1=document.getElementById('div1');
+    var timer=setInterval(function () {
+        oDiv1.style.width=oDiv1.offsetWidth+30+'px';
+        if (oDiv1.offsetWidth>=700){
+            clearInterval(timer);
+            oDiv1.style.width=700+'px';
+        }
+    },30);
+
+
+</script>
+
+</body>
+</html>

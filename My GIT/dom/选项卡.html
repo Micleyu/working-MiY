@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            #nbt{
+                width: 150px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                background: gray;
+                color: white;
+            }
+            #nbt>span{
+                float: left;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+            }
+            #nbt>.nbt-1{
+                background: black;
+            }
+            #content{
+               margin-top: 2px;
+            }
+            #content>div{
+                width: 150px;
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+                background: gray;
+                display: none;
+            }
+            #content>.active{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div>
+                <div id="nbt">
+                    <span class="nbt-1">111</span>
+                    <span>222</span>
+                    <span>333</span>
+                </div>
+                <div id="content">
+                    <div class="active">aaa</div>
+                    <div>bbb</div>
+                    <div>ccc</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var oNbt=document.getElementById('nbt');
+            var aSpan=oNbt.getElementsByTagName('span');
+            var oCon=document.getElementById('content');
+            var aDiv=oCon.getElementsByTagName('div');
+            for(var i=0;i<aSpan.length;i++){
+                aSpan[i].num=i;
+                aSpan[i].onclick=function () {
+                    for(var j=0;j<aSpan.length;j++){
+                        aSpan[j].className='';
+                        aDiv[j].className='';
+                    }
+                    this.className='nbt-1';
+                    aDiv[this.num].className='active';
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
