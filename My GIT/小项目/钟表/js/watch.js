@@ -42,5 +42,5 @@ setInterval(function () {
         dayHour++;
         oHour.style.transform='rotate('+(dayHour%12)*30+'deg)';
     }
-        console.log(dayHour)
+        console.log(dayHour);
 },1000);
