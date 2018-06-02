@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+li{
+    width: 2px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    transform-origin:0 100px ;
+}
+.num0,.num5,.num10,.num15,.num20,.num25,.num30,.num35,.num40,.num45,.num50,.num55{
+    height: 20px;
+}
+#container{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+}

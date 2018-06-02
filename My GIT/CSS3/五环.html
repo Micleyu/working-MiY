@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #blue1,#blue2{
+                width: 50px;
+                height: 50px;
+                border: 5px solid blue;
+                border-radius:50% ;
+            }
+            #yellow1,#yellow2{
+                width: 50px;
+                height: 50px;
+                border: 5px solid yellow;
+                border-radius:50% ;
+            }
+            #yellow1{
+                position: absolute;
+                top: 30px;
+                left: 30px;
+            }
+            .container1,.container2{
+                width: 25px;
+                height: 60px;
+                overflow: hidden;
+                position: absolute;
+            }
+            .container1{
+                top: 0;
+                left: 35px;
+            }
+            #blue2{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="blue1"></div>
+        <div id="yellow1"></div>
+        <div class="container1">
+            <div id="blue2"></div>
+        </div>
+
+    </body>
+</html>

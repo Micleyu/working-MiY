@@ -28,7 +28,7 @@ function num(r,c){
     if(c>=0&&c<=5){
         if($(aBLOCK[idx]).hasClass('mine')){
             return
-        } else {$(aBLOCK[idx]).text($(aBLOCK[idx]).text()*1+1)
+        } else {$(aBLOCK[idx]).children().text($(aBLOCK[idx]).children().text()*1+1)
         }
     }
     if(c<0){
@@ -68,6 +68,17 @@ function turn(r,c) {
     }
 }
 $('td').on('click',function () {
+
     var ri=$(this).attr('row');
     var ci=$(this).attr('col');
+    console.log(ri,ci);
+        // turn(ri-1,ci-1);
+        // turn(ri-1,ci*1);
+        // turn(ri-1,ci*1+1);
+        // turn(ri,ci-1);
+        // turn(ri,ci*1+1);
+        // turn(ri*1+1,ci-1);
+        // turn(ri*1+1,ci*1);
+        // turn(ri*1+1,ci*1+1);
+
 });
