@@ -9,8 +9,8 @@ ul{
     position: relative;
 }
 li{
-    width: 2px;
-    height: 10px;
+    width: 1px;
+    height: 5px;
     background: black;
     position: absolute;
     top: 0;
@@ -18,11 +18,39 @@ li{
     transform-origin:0 100px ;
 }
 .num0,.num5,.num10,.num15,.num20,.num25,.num30,.num35,.num40,.num45,.num50,.num55{
-    height: 20px;
+    height: 10px;
 }
 #container{
     width: 200px;
     height: 200px;
     border: 1px solid #000000;
     border-radius: 50%;
+    position: relative;
+}
+.hour{
+    width: 6px;
+    height: 30px;
+    background: red;
+    position: absolute;
+    top:70px;
+    left: 97px;
+    transform-origin:3px 30px;
+}
+.minute{
+    width: 4px;
+    height: 50px;
+    background: blue;
+    position: absolute;
+    top:50px;
+    left: 98px;
+    transform-origin:2px 50px;
+}
+.second{
+    width: 2px;
+    height: 70px;
+    background: green;
+    position: absolute;
+    top:30px;
+    left: 99px;
+    transform-origin:1px 70px ;
 }
