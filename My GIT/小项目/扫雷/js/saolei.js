@@ -52,3 +52,22 @@ for(var i=0;i<4;i++){
 }
 // console.log($('.mine:eq(0)').attr('row'));
 // console.log($('.mine:eq(0)').attr('col'));
+function turn(r,c) {
+    var idx=r*6+c;
+    if(c>=0&&c<=5){
+        if($(aBLOCK[idx]).hasClass('mine')){
+            return
+        } else {$(aBLOCK[idx]).trigger('click')
+        }
+    }
+    if(c<0){
+        return
+    }
+    if(c<0){
+        return
+    }
+}
+$('td').on('click',function () {
+    var ri=$(this).attr('row');
+    var ci=$(this).attr('col');
+});
