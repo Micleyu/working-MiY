@@ -9,13 +9,13 @@ ul{
     position: relative;
 }
 li{
-    width: 1px;
+    width: 2px;
     height: 5px;
     background: black;
     position: absolute;
     top: 0;
-    left: 100px;
-    transform-origin:0 100px ;
+    left: 99px;
+    transform-origin:1px 100px ;
 }
 .num0,.num5,.num10,.num15,.num20,.num25,.num30,.num35,.num40,.num45,.num50,.num55{
     height: 10px;

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                position: relative;
+                /*-webkit-perspective: 800px;*/
+                -webkit-transform-style:preserve-3d;
+                /*backface-visibility:visible ;*/
+                /*-webkit-animation: run 2s ease infinite;*/
+            }
+            @-webkit-keyframes run {
+                25%{
+                    -webkit-transform: rotatey(90deg);
+                }
+                50%{
+                    -webkit-transform: rotatey(180deg);
+                }
+                75%{
+                    -webkit-transform: rotatey(270deg);
+                }
+                100%{
+                    -webkit-transform: rotatey(360deg);
+                }
+            }
+            .container>div{
+                width: 200px;
+                height: 200px;
+                background: rgba(9,9,9,.2);
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 50px;
+                text-align: center;
+                line-height: 200px;
+                border: 1px solid #000;
+                border-radius:5px ;
+            }
+            .container>div.first{
+                -webkit-transform: rotatex(90deg) translatez(100px);
+            }
+            .container>div.third{
+                -webkit-transform: rotatex(-90deg) translatez(100px);
+            }
+            .container>div.second{
+                -webkit-transform:translatez(100px);
+            }
+            .container>div.fourth{
+                -webkit-transform:rotatey(180deg) translatez(100px);
+            }
+            .container>div.fifth{
+                -webkit-transform: rotatey(90deg) translatez(100px);
+            }
+            .container>div.sixth{
+                -webkit-transform: rotatey(-90deg) translatez(100px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="first">1</div>
+            <div class="second">2</div>
+            <div class="third">3</div>
+            <div class="fourth">4</div>
+            <div class="fifth">5</div>
+            <div class="sixth">6</div>
+        </div>
+        <script>
+            var oContainer=document.getElementsByClassName('container')[0];
+            var i=0;
+            setInterval(function () {
+                i++;
+                oContainer.style.transform='rotatey('+i+'deg)'
+            },10);
+            oContainer.style.transform='rotatey(deg)'
+        </script>
+    </body>
+</html>
