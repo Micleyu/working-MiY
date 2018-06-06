@@ -71,22 +71,19 @@ oContainerNext.onclick=function () {
     if(count==24){
         count=0
     }
-    for(var j=0;j<aSmallImg.length;j++){
-        aBigImg[j].style.webkitTransitionDelay=''+((Math.floor(Math.random()*600)))+'ms';
-        aBigImg[j].style.background='url(images/'+((count)+1)+'.jpg) no-repeat';
-        aBigImg[j].style.backgroundPosition=-aSmallImg[j].col*125+'px'+' '+(-aSmallImg[j].row*125)+'px';
-    }
-
+    run();
 };
 oContainerPrev.onclick=function () {
     count--;
     if(count==-1){
         count=23
     }
+    run();
+};
+function run() {
     for(var j=0;j<aSmallImg.length;j++){
-        aBigImg[j].style.webkitTransitionDelay=''+((Math.floor(Math.random()*600)))+'ms';
+        aBigImg[j].style.webkitTransitionDelay=''+((Math.floor(Math.random()*650)))+'ms';
         aBigImg[j].style.background='url(images/'+((count)+1)+'.jpg) no-repeat';
         aBigImg[j].style.backgroundPosition=-aSmallImg[j].col*125+'px'+' '+(-aSmallImg[j].row*125)+'px';
     }
-
-};
+}

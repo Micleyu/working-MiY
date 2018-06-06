@@ -33,6 +33,7 @@ li{
     width: 50px;
     height: 100px;
     position: absolute;
+    margin-top: -50px;
 }
 #container-prev{
     background: url("images/prev.png") 17px 42px no-repeat white;
