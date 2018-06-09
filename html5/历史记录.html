@@ -55,14 +55,12 @@
                 var oDiv=document.querySelector(''+$(this).attr('href'));
                 var top=oDiv.offsetTop;
                 history.pushState(top,'');
-                console.log(top);
                 $('html,body').animate({
                     scrollTop:top
                 },300);
                 return false
             });
             window.onpopstate=function (e) {
-                console.log(e.state);
                 $('html,body').animate({
                     scrollTop:e.state
                 },300);
