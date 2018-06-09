@@ -5,31 +5,23 @@
         <title>Title</title>
     </head>
     <body>
-        <button id="btn">随机彩票</button>
-        <div id="content">
+    <button id="btn">随机彩票</button>
+    <div id="content">
 
-        </div>
+    </div>
         <script>
             var oBtn=document.getElementById('btn');
             var oCantent=document.getElementById('content');
-            var obj={};
             oBtn.onclick=function () {
                 var arr=[];
                 for(var i=0;i<7;i++){
                     arr[i]=Math.floor(Math.random()*35+1);
                 }
-                var random=Math.random();
-                location.hash=random;
-                obj[random]=arr;
                 oCantent.innerHTML=arr;
+                history.pushState(arr,'');
             };
-            window.onhashchange=function () {
-                var str=location.hash.substring(1);
-                if(str){
-                    oCantent.innerHTML=obj[str];
-                }else{
-                    oCantent.innerHTML='';
-                }
+            window.onpopstate=function (e) {
+                oCantent.innerHTML=e.state;
             }
 
         </script>
