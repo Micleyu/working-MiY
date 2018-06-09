@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单</title>
+    </head>
+    <body>
+    <form action="">
+        <!--颜色-->
+        <input type="color">
+        <br>
+        <!--邮箱-->
+        <input type="email">
+        <br>
+        <!--数字-->
+        <input type="number" min="2" max="10" step="2">
+        <br>
+        <!--滑竿-->
+        <input type="range">
+        <br>
+        <!--日期-->
+        <input type="date">
+        <br>
+        <!--datalist-->
+        <input type="url"list="url_list" >
+        <datalist id="url_list">
+            <option value="http://www.baidu.com" ></option>
+            <option value="http://www.taobao.com"></option>
+        </datalist>
+        <br>
+        <!--
+        新增placeholder,
+            autofocus
+        -->
+        <input type="text" placeholder="请输入" autofocus>
+    </form>
+    </body>
+</html>
