@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script>
+        var person1={
+            name:'zhang1',
+            age:'10',
+            father:{
+                name:'zhang2',
+                age:'20'
+            }
+        };
+
+        function clone(obj) {
+            var resobj={};
+            for(key in obj){
+                if(obj[key] instanceof Object){
+                    resobj[key]=clone(obj[key])
+                }else{
+                    resobj[key]=obj[key];
+                }
+            }
+            return resobj
+        }
+
+
+//        第二种方法用JSON,互相没影响
+        var str=JSON.stringify(person1);
+        var person2=JSON.parse(str);
+
+        var person2=clone(person1);
+        person2.name='lisi';
+        person2.father.name='li';
+        console.log(person1,person2);
+
+    </script>
+    </body>
+</html>
