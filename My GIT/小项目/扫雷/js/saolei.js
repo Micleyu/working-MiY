@@ -8,16 +8,16 @@ var aBLOCK=document.querySelectorAll('td');
 var arr=[
 ];
 for(var i=0;i<4;i++){
-    arr[i]=Math.floor(Math.random()*36);
+    arr[i]=Math.floor(Math.random()*36+1);
 }
 while (arr[1]==arr[0]){
-    arr[1]=Math.floor(Math.random()*36);
+    arr[1]=Math.floor(Math.random()*36+1);
 }
 while (arr[2]==arr[0]||arr[2]==arr[1]){
-    arr[2]=Math.floor(Math.random()*36);
+    arr[2]=Math.floor(Math.random()*36+1);
 }
 while (arr[3]==arr[0]||arr[3]==arr[1]||arr[3]==arr[2]){
-    arr[3]=Math.floor(Math.random()*36);
+    arr[3]=Math.floor(Math.random()*36+1);
 }
 $(aBLOCK[arr[0]]).addClass('mine');
 $(aBLOCK[arr[1]]).addClass('mine');
