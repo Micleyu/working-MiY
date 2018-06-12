@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            body{
+                height: 10000px
+            }
+            #div0{
+                width: 400px;
+                height: 400px;
+                background-image:url("1.jpg");
+                background-color: red;
+                float: left;
+                position: relative;
+            }
+            #div1{
+                width: 200px;
+                height: 200px;
+                background:white;
+                opacity: 0.3;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: none;
+            }
+            #div2{
+                width: 400px;
+                height: 400px;
+                background: url("2.jpg") green no-repeat;
+                float: left;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div0">
+            <div id="div1">
+            </div>
+        </div>
+        <div id="div2">
+        </div>
+        <script>
+            var oDiv0=document.getElementById('div0');
+            var oDiv1=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+            oDiv0.onmouseover=function () {
+                oDiv1.style.display='block';
+                oDiv2.style.display='block';
+                oDiv0.onmousemove=function (e) {
+                    var left=e.clientX-oDiv1.offsetWidth/2;
+                    var top=e.clientY-oDiv1.offsetHeight/2;
+                    var maxX=oDiv0.offsetWidth-oDiv1.offsetWidth;
+                    var maxY=oDiv0.offsetHeight-oDiv1.offsetHeight;
+                    if(left<=0){
+                        left=0;
+                    }
+                    if(left>=maxX){
+                        left=maxX;
+                    }
+                    oDiv1.style.left=left+'px';
+                    if (top<=0){
+                        top=0;
+                    }
+                    if(top>=maxY){
+                        top=maxY
+                    }
+                    oDiv1.style.top=top+'px';
+                    oDiv2.style.backgroundPositionX=-left*2+'px';
+                    oDiv2.style.backgroundPositionY=-top*2+'px';
+                }
+            };
+            oDiv0.onmouseout=function () {
+                oDiv1.style.display='none';
+                oDiv2.style.display='none';
+            };
+
+        </script>
+    </body>
+</html>
