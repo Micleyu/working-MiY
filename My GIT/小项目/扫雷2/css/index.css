@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    position: relative;
+}
 /*header开始*/
 .header{
     width: 1230px;
@@ -19,12 +22,6 @@
     border: 1px solid #ccc;
     -webkit-border-radius: 20px;
 }
-.header-time{
-    float: right;
-    width: 500px;
-    height: 80px;
-    font-size: 30px;
-}
 /*headerwancheng*/
 /*content开始*/
 .content{
@@ -32,6 +29,12 @@
     height: 500px;
     /*background: red;*/
     margin: 0 auto;
+}
+td{
+    border: 1px solid #000;
+}
+.content .flag{
+    background: green;
 }
 .container-difficult td{
     width: 50px;
@@ -49,4 +52,46 @@
     background: #ccc;
 
 }
+td span{
+    float: left;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+}
+.mine>span{
+    background: red;
+}
+.container-difficult td span{
+    line-height: 50px;
+}
+.container-nomal td span{
+    line-height: 60px;
+}
+.container-easy td span{
+    line-height: 80px;
+}
 /*content完成*/
+/*result start*/
+.result{
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 100px;
+    display: none;
+}
+.result span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    display: none;
+}
+.result .result-win{
+    color: green;
+    font-size: 50px;
+}
+.result .result-lost{
+    color: red;
+    font-size: 50px;
+}
