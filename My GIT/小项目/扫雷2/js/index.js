@@ -17,7 +17,7 @@ for (var i=0;i<aButton.length;i++){
     aButton[i].index=i;
     aButton[i].addEventListener('click',function () {
         clickNum=0;
-        oTable.innerHTML='';
+        oTable.innerHTML=''
         oTable.className='content';
         $(oTable).addClass('container-'+model[this.index]);
         var oContent=document.querySelector('.content');
