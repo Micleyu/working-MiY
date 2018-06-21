@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+            }
+            body{
+                background: #000000;
+            }
+            #cvs{
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="cvs" width="500"height="500">
+        </canvas>
+        <script>
+            var oCvs=document.getElementById('cvs');
+            var ctx=oCvs.getContext('2d');
+            var arr=['red','blue','yellow','green'];
+            var timer;
+            oCvs.addEventListener('click',function () {
+                if (timer!=undefined){
+                    clearInterval(timer);
+                }
+            });
+            oCvs.addEventListener('click',function (e) {
+                cLeft=e.clientX;
+                cTop=e.clientY;
+                raduis=0;
+                num=Math.floor(Math.random()*4);
+                timer=setInterval(function () {
+                    raduis++;
+                    console.log(raduis);
+                    ctx.beginPath();
+                    ctx.arc(cLeft,cTop,raduis,0,2*Math.PI);
+                    ctx.fillStyle=arr[num];
+                    ctx.fill();
+                    if (raduis==500){
+                        clearInterval(timer);
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>
