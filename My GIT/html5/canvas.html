@@ -19,11 +19,13 @@
             var oCvs=document.getElementById('cvs');
             var cvs=oCvs.getContext('2d');
             cvs.beginPath();
+//            cvs.rotate(30*Math.PI/180);
             cvs.moveTo(100,100);
             cvs.lineTo(200,100);
             cvs.strokeStyle='red';
             cvs.stroke();
             cvs.beginPath();
+            cvs.rotate(45*Math.PI/180);
             cvs.rect(100,150,50,50);
             cvs.strokeStyle='green';
             cvs.stroke();
