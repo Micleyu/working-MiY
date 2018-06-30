@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>小人走开</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                background: black;
+            }
+            #cvs{
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="cvs" width="1000" height="1000"></canvas>
+        <script>
+            var oCvs=document.getElementById('cvs');
+            var ctx=oCvs.getContext('2d');
+            var idx=0;
+            var idx2=10;
+            var oImg=new Image();
+            oImg.onload=function () {
+                setInterval(function () {
+                    ctx.clearRect(0,0,1000,1000);
+                    if(idx>96){
+                        idx=0;
+                    }
+                    if(idx2>990){
+                        idx2=10;
+                    }
+                    ctx.drawImage(oImg,idx,96,32,50,idx2,0,32,50);
+                    idx+=32;
+                    idx2+=5;
+                },100);
+            };
+            oImg.src='pic2476.png'
+        </script>
+    </body>
+</html>
