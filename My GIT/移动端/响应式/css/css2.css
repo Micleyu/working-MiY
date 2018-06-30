@@ -1,0 +1,51 @@
+*{
+     margin: 0;
+     padding: 0;
+ }
+.header,.title{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: #ccc;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.img-box{
+    margin: 10px auto;
+}
+.img-mid{
+    display: block;
+    width: 100%;
+}
+.img-big,.img-small{
+    display: none;
+}
+.content{
+    width:100%;
+    margin:0 auto;
+}
+.red{
+    width: 66%;
+    height: 300px;
+    background: red;
+    display: table;
+    float: left;
+}
+.red p{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.blue{
+    width: 31%;
+    height: 300px;
+    background: blue;
+    display: table;
+    float: right;
+}
+.blue p{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
