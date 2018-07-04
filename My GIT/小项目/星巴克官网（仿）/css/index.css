@@ -148,4 +148,61 @@ a{
 .container-club{
     width: 100%;
 }
+.container-club-box{
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+.club-box-left{
+    float: left;
+    padding: 36px 0;
+    width: 50%;
+}
+.club-box-left h2{
+    margin-bottom: 18px;
+    letter-spacing: 0.4px;
+    font-size: 22px;
+    font-weight: 400;
+}
+.club-box-left p:first-of-type{
+    height: 64px;
+    margin-bottom: 24px;
+    letter-spacing: 0.4px;
+    font-size: 16px;
+    line-height: 160%;
+    color: rgba(0, 0, 0, 0.56);
+    display: table;
+}
+.club-box-left p:first-of-type a{
+    padding: 6px 18px;
+    margin: 1px;
+    color: #C2A661;
+    /*display: table-cell;*/
+    vertical-align: middle;
+    line-height: 160%;
+}
+.club-box-left p:nth-of-type(2) a{
+    border: 1px solid #00A862;
+    border-radius: 48px;
+    padding: 6px 18px;
+}
+.club-box-right{
+    position: absolute;
+    top:50%;
+    right:0;
+    float: right;
+    padding: 36px 0;
+    width: 50%;
+}
+.club-box-right img{
+    height: 72px;
+    position: absolute;
+    top:0;
+    right:24px;
+    margin-top: -36px;
+}
 /*container-club finish*/
