@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body,html{
+    font-family: "Microsoft YaHei", SimSun, '\5b8b\4f53', sans-serif;
+    font-size: 16px;
+    height: 100%;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
