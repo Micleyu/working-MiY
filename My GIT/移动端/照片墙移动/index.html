@@ -12,6 +12,24 @@
             margin: 0;
             padding: 0;
         }
+        body,html{
+            height: 100%;
+        }
+        #container{
+            display: block;
+        }
+        #big-img{
+            display: none;
+            background: #000000 url("images/1.jpg") center center no-repeat;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right:0;
+            bottom:0;
+            left:0;
+            background-size:contain ;
+            touch-action: none;
+        }
         img {
             float: left;
             width: 25%;
@@ -19,20 +37,54 @@
             border: 1px solid black;
             box-sizing: border-box;
         }
+
     </style>
     <body>
         <div id="container">
         </div>
         <div id="big-img">
+
         </div>
         <script src="jquery-1.12.4.js"></script>
         <script src="jquery.mobile-1.4.5.js"></script>
         <script>
             var html='';
+            var num=0;
             for(var i=0;i<24;i++){
                 html+='<img src="images/thumbs/'+(i+1)+'.jpg" alt="">'
             }
             $('#container').append(html);
+            $('img').on('touchstart',function (e) {
+               num=$(this).index()+1;
+                $('#container').css('display','none');
+               $('#big-img').css({
+                   'background-image':'url("images/'+num+'.jpg")',
+                   'display':'block'
+               });
+                e.preventDefault();
+            });
+            $('#big-img').on('tap',function () {
+                $('#container').css('display','block');
+                $('#big-img').css({
+                    'display':'none'
+                })
+            }).on('swiperight',function () {
+                if(num==24){
+                    num=0;
+                }
+                num=num+1;
+                $('#big-img').css({
+                    'background-image':'url("images/'+num+'.jpg")'
+                });
+            }).on('swipeleft',function () {
+                if(num==1){
+                    num=25;
+                }
+                num=num-1;
+                $('#big-img').css({
+                    'background-image':'url("images/'+num+'.jpg")'
+                });
+            })
         </script>
     </body>
 </html>
