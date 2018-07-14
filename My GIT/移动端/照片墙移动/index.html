@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Title</title>
+        <link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+    </head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            float: left;
+            width: 25%;
+            display: block;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+    <body>
+        <div id="container">
+        </div>
+        <div id="big-img">
+        </div>
+        <script src="jquery-1.12.4.js"></script>
+        <script src="jquery.mobile-1.4.5.js"></script>
+        <script>
+            var html='';
+            for(var i=0;i<24;i++){
+                html+='<img src="images/thumbs/'+(i+1)+'.jpg" alt="">'
+            }
+            $('#container').append(html);
+        </script>
+    </body>
+</html>
