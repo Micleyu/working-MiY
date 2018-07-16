@@ -68,19 +68,20 @@
                 $('#big-img').css({
                     'display':'none'
                 })
-            }).on('swiperight',function () {
+            }).on('swipeleft',function () {
+                console.log(111);
                 if(num==24){
                     num=0;
                 }
-                num=num+1;
+                num++;
                 $('#big-img').css({
                     'background-image':'url("images/'+num+'.jpg")'
                 });
-            }).on('swipeleft',function () {
+            }).on('swiperight',function () {
                 if(num==1){
                     num=25;
                 }
-                num=num-1;
+                num--;
                 $('#big-img').css({
                     'background-image':'url("images/'+num+'.jpg")'
                 });
