@@ -10,7 +10,6 @@
 
 
         docEl.style.fontSize = rem + 'px';
-        console.log(0.14*rem);
     }
 
     win.addEventListener('resize', function() {
