@@ -363,4 +363,40 @@ a{
     border-right:none
 }
 /*footer menu finish*/
+.footer-links{
+    font-size: .24rem;
+    margin: .3rem .2rem;
+    text-align: center;
+}
+.footer-links a{
+    padding-left: .5rem;
+    display: inline-block;
+    padding-bottom: .15rem;
+    color: #06c1ae;
+    cursor: pointer;
+}
+.footer-links a:first-child{
+    padding:0;
+}
+
+.footer-copyright{
+    font-size: .22rem;
+    text-align: center;
+    position: relative;
+}
+.footer-copyright p{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    border-top: 1px solid #999;
+}
+.footer-copyright span{
+    position: relative;
+    padding: 0 .3rem;
+    background-color: #f0efed;
+    color: #999;
+}
+.footer-copyright span a{
+    color: #999;
+}
 /*footer finish*/
