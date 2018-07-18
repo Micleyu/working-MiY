@@ -54,10 +54,11 @@ $j:5;
 @while($j<10){
   .a#{$j}{
     width: #{$j}px;
+    
   }
   $j:$j+2;
 }
-@each $colo in red green blue{
+@each $colo in red gray blue{
   .a_#{$colo}{
     background: $colo;
   }
