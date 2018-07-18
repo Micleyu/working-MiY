@@ -1,4 +1,64 @@
-$color:#ccc;
-body{
+$color:#ff0000;
+$width:200px !default;
+$a:'header';
+$b:'logo';
+@mixin borderStyle(){
+  border: 1px solid #000000;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.5);
+}
+@mixin arrowin($wid,$dir,$col){
+  border-width:$wid;
+  border-style: solid;
+  border-color:transparent;
+  @if($dir==top){
+    border-bottom-color:$col ;
+  }
+  @if($dir==bottom){
+    border-top-color:$col ;
+  }
+  @if($dir==left){
+    border-right-color:$col ;
+  }
+  @if($dir==right){
+    border-left-color:$col ;
+  }
+  width: 0;
+  height: 0;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.#{$a}{
   background: $color;
+  width: 500px;
+  .#{$b}{
+    width: $width;
+    background:#ccc ;
+    &:hover{
+      background: #00A5FF;
+      @include borderStyle()
+    }
+  }
+  p{
+  @include borderStyle()
+  }
+}
+.arrow{
+  @include arrowin(20px,bottom,gray)
+}
+.new{
+  @extend .arrow
+}
+$j:5;
+@while($j<10){
+  .a#{$j}{
+    width: #{$j}px;
+  }
+  $j:$j+2;
+}
+@each $colo in red green blue{
+  .a_#{$colo}{
+    background: $colo;
+  }
 }
