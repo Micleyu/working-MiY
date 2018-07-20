@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,3,4,5];
+        let arr2=['a','b','b','a','c']
+        // 第一种方法：
+        function aa(arr){
+            let arr1=[];
+            arr1.push(arr[0])
+            for(let i=1;i<arr.length;i++){
+                let count=0;
+                for(let j=0;j<arr1.length;j++){
+                    if(arr[i]!=arr1[j]){    
+                        count++;
+                    }
+                    if(count==arr1.length){
+                       arr1.push(arr[i]);
+                    }
+                }
+            }
+            return arr1
+        }
+        console.log(aa(arr2));
+        // 第二种方法：使用set
+        /* let arr1=new Set(arr2);
+        arr1=[...arr1]
+        console.log(arr1); */
+        // 第三种方法：
+
+        
+    
+    
+    </script>
+</body>
+</html>

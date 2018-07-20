@@ -58,8 +58,24 @@
                 // 箭头函数里this指向父作用域的this；
                 // 箭头函数里没有this所以无法构建构造函数；
                 // 箭头函数里如法使用arguments，如果想取参数用rest；
-
-
+                let obj={
+                    name:'zhangs',
+                    age:20,
+                    say:function(){
+                        console.log(this.name)
+                    }
+                };
+                let obj1={
+                    name:'lis',
+                    age:20,
+                    say:function(){
+                        console.log(this.name)
+                    }
+                }
+                console.log(Object.assign(obj,obj1));
+                console.log(Object.keys(obj));
+                console.log(Object.values(obj));
+                console.log(Object.entries(obj));
     </script>
     </body>
 </html>
